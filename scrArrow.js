@@ -7,7 +7,7 @@ function Start () {
 	if (direction == -1) {
 		transform.rotation.y = 180;
 	}
-	yield WaitForSeconds(3);
+	yield WaitForSeconds(5);
 	Destroy(gameObject);
 }
 
@@ -16,7 +16,7 @@ function Update () {
 }
 
 function FlyAcross () {
-	var flySpeed = 10.0;
+	var flySpeed = 10.0 * scrGame.beatPerSecond;
 	transform.position.x += flySpeed * Time.deltaTime * direction;
 }
 
