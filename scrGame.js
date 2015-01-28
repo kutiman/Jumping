@@ -2,6 +2,13 @@
 
 static var fieldArray : boolean[] = new boolean[24];
 
+
+static var levelStartTime : float;
+static var beatPerSecond : float;
+static var lastBeat : float;
+static var levelActive = false;
+static var currentBeat : int;
+
 function Start () {
 
 }
@@ -30,3 +37,10 @@ function CreateArrow (direction : int) {
 }
 
 
+function StartLevel () {
+	levelStartTime = Time.time;
+	lastBeat = Time.time;
+	beatPerSecond = 0.5;
+	levelActive = true;
+	currentBeat = 0;
+}
